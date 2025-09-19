@@ -63,7 +63,41 @@
             position: absolute;
             width: 100%;
             height: 100%;
+            animation: moveAnimation 5s linear infinite, spinAnimation 1s linear infinite;
         }
+
+        @keyframes moveAnimation {
+    0% {
+        top: 10%;   /* Start near top */
+        left: 10%;  /* Start near left */
+    }
+    25% {
+        top: 10%;
+        left: 50%;  /* Move to right side */
+    }
+    50% {
+        top: 50%;   /* Move to bottom */
+        left: 50%;
+    }
+    75% {
+        top: 50%;
+        left: 10%;  /* Move to left side */
+    }
+    100% {
+        top: 10%;
+        left: 10%;  /* Return to start */
+    }
+}
+
+@keyframes spinAnimation {
+    from {
+        transform: rotate(0deg); /* Start at 0 degrees rotation */
+    }
+    to {
+        transform: rotate(360deg); /* End at 360 degrees (a full circle) */
+    }
+}
+
         
         /* Luxury car body */
         .car-body {
