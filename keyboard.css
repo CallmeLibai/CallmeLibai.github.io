@@ -74,10 +74,12 @@
     25% {
         top: 10%;
         left: 50%;  /* Move to right side */
+        scale: 2;
     }
     50% {
         top: 50%;   /* Move to bottom */
         left: 50%;
+        scale: 2;
     }
     75% {
         top: 50%;
