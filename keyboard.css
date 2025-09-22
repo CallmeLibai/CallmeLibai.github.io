@@ -1,0 +1,105 @@
+/*body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: linear-gradient(45deg, #ff0000, #ff9900, #ffff00, #00ff00, #00ffff, #0000ff, #9900ff, #ff00ff, #ff0000);
+    background-size: 1000% 1000%;
+    animation: discoRainbow 10s ease infinite;
+}
+
+@keyframes discoRainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}*/
+.treeContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    background-color: #ff0000; /* Red */
+    margin: 0;
+    animation: colorStrobe 0.5s linear infinite;
+}
+@keyframes colorStrobe {
+    0% {
+        background-color: #ff0000; /* Red */
+    }
+    14% {
+        background-color: #ff9900; /* Orange */
+    }
+    28% {
+        background-color: #ffff00; /* Yellow */
+    }
+    42% {
+        background-color: #00ff00; /* Green */
+    }
+    57% {
+        background-color: #0000ff; /* Blue */
+    }
+    71% {
+        background-color: #9900ff; /* Purple */
+    }
+    85% {
+        background-color: #ff00ff; /* Pink */
+    }
+    100% {
+        background-color: #ff0000; /* Back to Red */
+    }
+}
+
+.tree {
+    width: 400px; /* Adjust this to make the image larger or smaller */
+    border: 8px solid #2a6d30; /* A nice green border to match the tree */
+    border-radius: 20px; 
+    box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.2); 
+    position:absolute;
+    animation: moveAnimation 5s linear infinite, spinAnimation 1s linear infinite;
+}
+
+.labu{
+    border: 5px solid blue;
+    border-radius: 20px;
+    animation: spinAnimation 6s linear infinite;
+    position: absolute;
+    top:1px;
+    right:1px ;
+}
+
+@keyframes moveAnimation {
+    0% {
+        top: 10%;   /* Start near top */
+        left: 10%;  /* Start near left */
+    }
+    25% {
+        top: 10%;
+        left: 50%;  /* Move to right side */
+    }
+    50% {
+        top: 50%;   /* Move to bottom */
+        left: 50%;
+    }
+    75% {
+        top: 50%;
+        left: 10%;  /* Move to left side */
+    }
+    100% {
+        top: 10%;
+        left: 10%;  /* Return to start */
+    }
+}
+
+@keyframes spinAnimation {
+    from {
+        transform: rotate(0deg); /* Start at 0 degrees rotation */
+    }
+    to {
+        transform: rotate(360deg); /* End at 360 degrees (a full circle) */
+    }
+}
+
+
+#treeImage:hover {
+    animation-play-state: paused; /* The spinning pauses when you hover over the image */
+    cursor: pointer; /* Changes the cursor to a hand to show it's interactive */
+}
